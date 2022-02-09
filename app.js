@@ -39,7 +39,8 @@ app.get('/session', function(req, res, next) {
     res.end()
     } else {
     req.session.views = 1
-    res.end(' New session is started')
+	res.write('<p> No. of views: 1 </p>')
+	res.end()
     }
 })
 
