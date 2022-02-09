@@ -21,14 +21,9 @@ app.use (
         saveUninitialized: false,
         cookie: {
     })
-);
+	});
 
-app.get('/', (req, res) => {
-    res.send(`Welcome page to the node.`);
-
-});
-
-app.get('/session', function(req, res, next) {
+app.get('/', function(req, res, next) {
 
     if (req.session.views) {
         
