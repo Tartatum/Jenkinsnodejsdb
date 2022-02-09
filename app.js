@@ -4,6 +4,7 @@ const port = 8081;
 const session = require('express-session');
 const app = express();
 
+// Session Setup
 app.use (
     session ({
 
@@ -21,12 +22,12 @@ app.use (
         cookie: {
     })
 );
+
 app.get('/', (req, res) => {
-    res.send(`Hello from my node app, it is your first time here ! Welcome :)`);
+    res.send(`Welcome page to the node.`);
 
 });
 
-// Get function in which send session as routes.
 app.get('/session', function(req, res, next) {
 
     if (req.session.views) {
