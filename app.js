@@ -19,11 +19,14 @@ app.use (
         // Forces a session that is "uninitialized"
         // to be saved to the store
         saveUninitialized: false,
-        cookie: {
+        cookie: {}
     })
-	});
+);
+app.get('/', (req, res) => {
+    res.send(`Hello from my node app, it is your first time here ! Welcome :)`);
 
-app.get('/', function(req, res, next) {
+});
+app.get('/session', function(req, res, next) {
 
     if (req.session.views) {
         
